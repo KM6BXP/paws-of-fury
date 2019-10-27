@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Camera))]
 public class Camera_Movement : MonoBehaviour
 {
+    public bool dynamic_camera = true;
+
     public List<Transform> targets;
     public Vector3 offset;
     public float smoothTime = 0.5f;
@@ -19,12 +21,14 @@ public class Camera_Movement : MonoBehaviour
 
     public void Start()
     {
+        GetBounds();
         cam = GetComponent<Camera>();
+        transform.position = bounds.center + offset;
     }
 
     private void LateUpdate()
     {
-        if (targets.Count == 0)
+        if (targets.Count == 0 || !dynamic_camera)
             return;
         GetBounds();
         Move();
@@ -40,8 +44,12 @@ public class Camera_Movement : MonoBehaviour
     private void Move()
     {
         Vector3 centerPoint = GetCenterPoint();
-
-        Vector3 newPosition = centerPoint + offset;
+        Vector3 newOffset = offset;
+        if(bounds.size.y > 5)
+        {
+            newOffset.y -= offset.y;
+        }
+        Vector3 newPosition = centerPoint + newOffset;
         transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);
     }
 
