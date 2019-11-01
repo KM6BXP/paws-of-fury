@@ -1229,6 +1229,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8e59ab82982ea2f4bbd622adaffdb172, type: 2}
   - {fileID: 11400000, guid: 260563a381670f042b986215e261eccc, type: 2}
   - {fileID: 11400000, guid: 7d08a3da2c6be7648bd6f7f79c21697c, type: 2}
+  - {fileID: 11400000, guid: c6020a13f6959bc468bacd222a2f9f96, type: 2}
   charCellPrefab: {fileID: 1518450411981782, guid: c53dadccb54e53441bcbddeabbab3a62,
     type: 3}
   gridBgPrefab: {fileID: 1656363544186126, guid: 1de47e36ee13e7d4a85a1dad97c2e372,
