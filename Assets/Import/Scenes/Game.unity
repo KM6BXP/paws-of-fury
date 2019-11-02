@@ -1217,14 +1217,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotArtworkSize: {x: 0, y: 0}
+  debug: 0
   characters:
   - {fileID: 11400000, guid: f64a1c7811e708e439359fb4b850b951, type: 2}
   - {fileID: 11400000, guid: 7270ecef0cf2c254a8dd5f29225140b9, type: 2}
   - {fileID: 11400000, guid: 428b49a970357b540ad649cae54665e3, type: 2}
   - {fileID: 11400000, guid: 20e56cb545e146b48ae30fb1d4d74cf2, type: 2}
-  - {fileID: 11400000, guid: e60d4df4a71440d49b780daae90fd32a, type: 2}
-  - {fileID: 11400000, guid: 7292a10cb475fb44dbcd2762ac795c1c, type: 2}
   - {fileID: 11400000, guid: 6eaa1e700e58bee4db8024bd62895556, type: 2}
+  - {fileID: 11400000, guid: 7292a10cb475fb44dbcd2762ac795c1c, type: 2}
+  - {fileID: 11400000, guid: e60d4df4a71440d49b780daae90fd32a, type: 2}
   - {fileID: 11400000, guid: 93136e7590936d74eb66bceb031f4243, type: 2}
   - {fileID: 11400000, guid: 8e59ab82982ea2f4bbd622adaffdb172, type: 2}
   - {fileID: 11400000, guid: 260563a381670f042b986215e261eccc, type: 2}

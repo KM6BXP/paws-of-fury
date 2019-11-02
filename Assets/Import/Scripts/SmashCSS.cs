@@ -96,9 +96,11 @@ public class SmashCSS : MonoBehaviour
 
         charCell.name = character.characterName;
 
+        Image background = charCell.transform.Find("background").GetComponent<Image>();
         Image artwork = charCell.transform.Find("artwork").GetComponent<Image>();
         TextMeshProUGUI name = charCell.transform.Find("nameRect").GetComponentInChildren<TextMeshProUGUI>();
 
+        background.color = character.backgroundColor;
         artwork.sprite = character.characterSprite;
         name.text = character.characterName;
 

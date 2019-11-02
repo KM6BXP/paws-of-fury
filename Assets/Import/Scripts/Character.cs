@@ -9,7 +9,7 @@ public class Character : ScriptableObject {
     public string characterName;
     public Sprite characterSprite;
     public Sprite characterIcon;
-    public float zoom = 1;
+    public float zoom = 0.39F;
 
     public Color backgroundColor;
 }
