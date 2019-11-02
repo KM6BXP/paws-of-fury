@@ -14,6 +14,8 @@ public class SmashCSS : MonoBehaviour
 
     private float rowSize;
     private float rowCount;
+    private float ogWidth;
+    private float ogHeight;
 
     private List<GameObject> characterObjects;
     [HideInInspector]
@@ -21,6 +23,7 @@ public class SmashCSS : MonoBehaviour
 
 
     public static SmashCSS instance;
+    public bool debug = false;
     [Header("Characters List")]
     public List<Character> characters = new List<Character>();
     [Space]
@@ -37,6 +40,17 @@ public class SmashCSS : MonoBehaviour
         instance = this;
     }
 
+    private void Update()
+    {
+        if (!debug)
+            return;
+        foreach (Transform child in gridLayout.transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+        SpawnCharacters();
+    }
+
     void Start()
     {
 
@@ -44,8 +58,16 @@ public class SmashCSS : MonoBehaviour
         gridSize = GetComponent<RectTransform>();
         gridSize.sizeDelta = new Vector2(gridLayout.cellSize.x * 5, gridLayout.cellSize.y * 2);
         slotArtworkSize = playerSlotsContainer.GetChild(0).Find("artwork").GetComponent<RectTransform>().sizeDelta;
-        float ogWidth = gridLayout.cellSize.x;
-        float ogHeight = gridLayout.cellSize.y;
+
+
+        ogWidth = gridLayout.cellSize.x;
+        ogHeight = gridLayout.cellSize.y;
+
+        SpawnCharacters();
+    }
+
+    private void SpawnCharacters()
+    {
 
         int spawnedCharacters = 0;
         rowSize = 4;
