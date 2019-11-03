@@ -58,20 +58,21 @@ public class CursorDetection : MonoBehaviour {
 
         if (results.Count > 0)
         {
-            Debug.Log(results);
-            Debug.Log(results[0].gameObject.name);
-            if (results[0].gameObject.GetComponent<Button>() != null && Input.GetKeyDown(KeyCode.Space))
+            foreach (RaycastResult result in results)
             {
-                Debug.Log("we got quit");
-                results[0].gameObject.GetComponent<Button>().onClick.Invoke();
-                timer = 0f;
-                return;
+                if (results[0].gameObject.GetComponent<Button>() != null && Input.GetKeyDown(KeyCode.Space))
+                {
+                    Debug.Log("exit");
+                    results[0].gameObject.GetComponent<Button>().onClick.Invoke();
+                    timer = 0f;
+                    return;
+                }
             }
         }
 
         if (hasToken)
         {
-            if (results.Count > 0)
+            if (results.Count > 0 && results[0].gameObject.tag == "Selectable")
             {
                 Transform raycastCharacter = results[0].gameObject.transform;
 
