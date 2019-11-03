@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bino
   m_EditorClassIdentifier: 
   characterName: Bino
-  characterSprite: {fileID: 21300000, guid: 8ff3aa7af936a83489658b2f346b0593, type: 3}
-  characterIcon: {fileID: 21300000, guid: 12af01ed189fe824584c340587238421, type: 3}
-  zoom: 0.85
-  backgroundColor: {r: 0, g: 0, b: 0, a: 0}
+  characterSprite: {fileID: 21300000, guid: bc7d4eb4dadf6c04482cb1823246a45b, type: 3}
+  characterIcon: {fileID: 21300000, guid: e4ba2a870fc5c344f862b51b5cbb6b42, type: 3}
+  zoom: 0.52
+  backgroundColor: {r: 0.48627454, g: 0.85098046, b: 0.35686275, a: 1}

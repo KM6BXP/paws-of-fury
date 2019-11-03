@@ -10,6 +10,8 @@ public class CursorDetection : MonoBehaviour {
     private GraphicRaycaster gr;
     private PointerEventData pointerEventData = new PointerEventData(null);
 
+    private float timer;
+
     public Transform currentCharacter;
 
     public Transform token;
@@ -24,22 +26,25 @@ public class CursorDetection : MonoBehaviour {
     }
 
     void Update () {
-
+        if (timer < .5f)
+            timer += Time.deltaTime;
         //CONFIRM
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Space) && hasToken && timer >= .5f)
         {
             if (currentCharacter != null)
             {
                 TokenFollow(false);
                 SmashCSS.instance.ConfirmCharacter(0, SmashCSS.instance.characters[currentCharacter.GetSiblingIndex()]);
             }
+            timer = 0f;
         }
 
         //CANCEL
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.Space) && !hasToken && timer >= .5f)
         {
             SmashCSS.instance.confirmedCharacter = null;
             TokenFollow(true);
+            timer = 0f;
         }
 
         if (hasToken)
@@ -51,9 +56,23 @@ public class CursorDetection : MonoBehaviour {
         List<RaycastResult> results = new List<RaycastResult>();
         gr.Raycast(pointerEventData, results);
 
+        if (results.Count > 0)
+        {
+            foreach (RaycastResult result in results)
+            {
+                if (results[0].gameObject.GetComponent<Button>() != null && Input.GetKeyDown(KeyCode.Space))
+                {
+                    Debug.Log("exit");
+                    results[0].gameObject.GetComponent<Button>().onClick.Invoke();
+                    timer = 0f;
+                    return;
+                }
+            }
+        }
+
         if (hasToken)
         {
-            if (results.Count > 0)
+            if (results.Count > 0 && results[0].gameObject.tag == "Selectable")
             {
                 Transform raycastCharacter = results[0].gameObject.transform;
 

@@ -14,6 +14,8 @@ public class SmashCSS : MonoBehaviour
 
     private float rowSize;
     private float rowCount;
+    private float ogWidth;
+    private float ogHeight;
 
     private List<GameObject> characterObjects;
     [HideInInspector]
@@ -21,6 +23,7 @@ public class SmashCSS : MonoBehaviour
 
 
     public static SmashCSS instance;
+    public bool debug = false;
     [Header("Characters List")]
     public List<Character> characters = new List<Character>();
     [Space]
@@ -37,6 +40,17 @@ public class SmashCSS : MonoBehaviour
         instance = this;
     }
 
+    private void Update()
+    {
+        if (!debug)
+            return;
+        foreach (Transform child in gridLayout.transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+        SpawnCharacters();
+    }
+
     void Start()
     {
 
@@ -44,8 +58,16 @@ public class SmashCSS : MonoBehaviour
         gridSize = GetComponent<RectTransform>();
         gridSize.sizeDelta = new Vector2(gridLayout.cellSize.x * 5, gridLayout.cellSize.y * 2);
         slotArtworkSize = playerSlotsContainer.GetChild(0).Find("artwork").GetComponent<RectTransform>().sizeDelta;
-        float ogWidth = gridLayout.cellSize.x;
-        float ogHeight = gridLayout.cellSize.y;
+
+
+        ogWidth = gridLayout.cellSize.x;
+        ogHeight = gridLayout.cellSize.y;
+
+        SpawnCharacters();
+    }
+
+    private void SpawnCharacters()
+    {
 
         int spawnedCharacters = 0;
         rowSize = 4;
@@ -74,9 +96,11 @@ public class SmashCSS : MonoBehaviour
 
         charCell.name = character.characterName;
 
+        Image background = charCell.transform.Find("background").GetComponent<Image>();
         Image artwork = charCell.transform.Find("artwork").GetComponent<Image>();
         TextMeshProUGUI name = charCell.transform.Find("nameRect").GetComponentInChildren<TextMeshProUGUI>();
 
+        background.color = character.backgroundColor;
         artwork.sprite = character.characterSprite;
         name.text = character.characterName;
 
@@ -100,11 +124,11 @@ public class SmashCSS : MonoBehaviour
         Transform slotIcon = slot.Find("icon");
 
         Sequence s = DOTween.Sequence();
-        s.Append(slotArtwork.DOLocalMoveX(-300, .05f).SetEase(Ease.OutCubic));
+        s.Append(slotArtwork.DOLocalMoveX(-300, .1f).SetEase(Ease.OutCubic));
         s.AppendCallback(() => slotArtwork.GetComponent<Image>().sprite = artwork);
         s.AppendCallback(() => slotArtwork.GetComponent<Image>().color = alpha);
         s.Append(slotArtwork.DOLocalMoveX(300, 0));
-        s.Append(slotArtwork.DOLocalMoveX(0, .05f).SetEase(Ease.OutCubic));
+        s.Append(slotArtwork.DOLocalMoveX(0, .1f).SetEase(Ease.OutCubic));
 
         if (nullChar)
         {
@@ -132,7 +156,9 @@ public class SmashCSS : MonoBehaviour
         if (confirmedCharacter == null)
         {
             confirmedCharacter = character;
+            playerSlotsContainer.GetChild(player).DOComplete();
             playerSlotsContainer.GetChild(player).DOPunchPosition(Vector3.down * 3, .3f, 10, 1);
+
         }
     }
 
