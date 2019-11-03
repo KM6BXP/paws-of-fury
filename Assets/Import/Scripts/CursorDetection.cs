@@ -56,19 +56,24 @@ public class CursorDetection : MonoBehaviour {
         List<RaycastResult> results = new List<RaycastResult>();
         gr.Raycast(pointerEventData, results);
 
+        if (results.Count > 0)
+        {
+            Debug.Log(results);
+            Debug.Log(results[0].gameObject.name);
+            if (results[0].gameObject.GetComponent<Button>() != null && Input.GetKeyDown(KeyCode.Space))
+            {
+                Debug.Log("we got quit");
+                results[0].gameObject.GetComponent<Button>().onClick.Invoke();
+                timer = 0f;
+                return;
+            }
+        }
+
         if (hasToken)
         {
             if (results.Count > 0)
             {
                 Transform raycastCharacter = results[0].gameObject.transform;
-
-                if (results[0].gameObject.GetComponent<Button>() != null && Input.GetKeyDown(KeyCode.Space) && timer >= .5f)
-                {
-                    Debug.Log("we got quit");
-                    raycastCharacter.GetComponent<Button>().onClick.Invoke();
-                    timer = 0f;
-                    return;
-                }
 
                 if (raycastCharacter != currentCharacter)
                 {
