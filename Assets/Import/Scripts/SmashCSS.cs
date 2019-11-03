@@ -124,11 +124,11 @@ public class SmashCSS : MonoBehaviour
         Transform slotIcon = slot.Find("icon");
 
         Sequence s = DOTween.Sequence();
-        s.Append(slotArtwork.DOLocalMoveX(-300, .05f).SetEase(Ease.OutCubic));
+        s.Append(slotArtwork.DOLocalMoveX(-300, .1f).SetEase(Ease.OutCubic));
         s.AppendCallback(() => slotArtwork.GetComponent<Image>().sprite = artwork);
         s.AppendCallback(() => slotArtwork.GetComponent<Image>().color = alpha);
         s.Append(slotArtwork.DOLocalMoveX(300, 0));
-        s.Append(slotArtwork.DOLocalMoveX(0, .05f).SetEase(Ease.OutCubic));
+        s.Append(slotArtwork.DOLocalMoveX(0, .1f).SetEase(Ease.OutCubic));
 
         if (nullChar)
         {
@@ -156,7 +156,9 @@ public class SmashCSS : MonoBehaviour
         if (confirmedCharacter == null)
         {
             confirmedCharacter = character;
+            playerSlotsContainer.GetChild(player).DOComplete();
             playerSlotsContainer.GetChild(player).DOPunchPosition(Vector3.down * 3, .3f, 10, 1);
+
         }
     }
 

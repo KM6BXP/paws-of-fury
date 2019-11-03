@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Peanut
   characterSprite: {fileID: 21300000, guid: 8ff3aa7af936a83489658b2f346b0593, type: 3}
-  characterIcon: {fileID: 21300000, guid: 12af01ed189fe824584c340587238421, type: 3}
+  characterIcon: {fileID: 21300000, guid: e4ba2a870fc5c344f862b51b5cbb6b42, type: 3}
   zoom: 0.97
-  backgroundColor: {r: 0, g: 0, b: 0, a: 0}
+  backgroundColor: {r: 0.654902, g: 0.043137256, b: 0.007843138, a: 1}
