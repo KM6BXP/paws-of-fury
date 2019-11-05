@@ -10,6 +10,7 @@ public class Camera_Movement : MonoBehaviour
     public List<Transform> targets;
     public Vector3 offset;
     public float smoothTime = 0.5f;
+    public float offset_falloff = 5;
 
     public float minZoom = 40f;
     public float maxZoom = 10f;
@@ -45,7 +46,7 @@ public class Camera_Movement : MonoBehaviour
     {
         Vector3 centerPoint = GetCenterPoint();
         Vector3 newOffset = offset;
-        if(bounds.size.y > 5)
+        if(bounds.size.y > offset_falloff)
         {
             newOffset.y -= offset.y;
         }

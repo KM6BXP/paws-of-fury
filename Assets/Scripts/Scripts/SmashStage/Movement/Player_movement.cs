@@ -24,20 +24,35 @@ public class Player_movement : MonoBehaviour
         //get input
         if (useArrows)
         {
-            moveDirection = new Vector3(Input.GetAxis("HorizontalArrow"), Input.GetAxis("VerticalArrow"), 0.0f);
+            moveDirection = new Vector3(Input.GetAxis("HorizontalArrow"), 0.0f, 0.0f);
         }
 
         if (!useArrows)
         {
-            moveDirection = new Vector3(Input.GetAxis("HorizontalWASD"), Input.GetAxis("VerticalWASD"), 0.0f);
+            moveDirection = new Vector3(Input.GetAxis("HorizontalWASD"), 0.0f, 0.0f);
         }
 
         moveDirection *= speed;
 
-        if (Input.GetButton("Jump"))
+        if (characterController.isGrounded)
         {
-            moveDirection.y = jumpSpeed;
+            if (useArrows)
+            {
+                if (Input.GetAxis("VerticalArrow") > 0)
+                {
+                    moveDirection.y = jumpSpeed;
+                }
+            }
+
+            if (!useArrows)
+            {
+                if (Input.GetAxis("VerticalWASD") > 0)
+                {
+                    moveDirection.y = jumpSpeed;
+                }
+            }
         }
+        
 
         // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
         // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
@@ -46,5 +61,6 @@ public class Player_movement : MonoBehaviour
 
         // Move the controller
         characterController.Move(moveDirection * Time.deltaTime);
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0);
     }
 }
