@@ -40,7 +40,8 @@ public class Player_movement : MonoBehaviour
         //Jumping
         if ((characterController.collisionFlags & CollisionFlags.Below) != 0)
         {
-            moveVelocity.y = 0;
+            if((characterController.collisionFlags & CollisionFlags.Above) != 0 && moveVelocity.y > 0)
+                moveVelocity.y = 0;
             if (useArrows)
             {
                 if (Input.GetAxis("VerticalArrow") > 0)
