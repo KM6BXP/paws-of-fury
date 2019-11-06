@@ -12,7 +12,7 @@ public class Player_movement : MonoBehaviour
     public float jumpSpeed = 8.0f;
     public float gravity = 0.0f;
 
-    private Vector3 moveDirection = Vector3.zero;
+    private Vector3 moveVelocity = Vector3.zero;
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -21,26 +21,31 @@ public class Player_movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //get input
+        //Get input
         if (useArrows)
         {
-            moveDirection = new Vector3(Input.GetAxis("HorizontalArrow"), 0.0f, 0.0f);
+            moveVelocity.x = Input.GetAxis("HorizontalArrow") * speed;
         }
 
         if (!useArrows)
         {
-            moveDirection = new Vector3(Input.GetAxis("HorizontalWASD"), 0.0f, 0.0f);
+            moveVelocity.x = Input.GetAxis("HorizontalWASD") * speed;
         }
 
-        moveDirection *= speed;
-
-        if (characterController.isGrounded)
+        if ((characterController.collisionFlags & CollisionFlags.Above) != 0 && moveVelocity.y > 0)
         {
+            moveVelocity.y = 0;
+        }
+
+        //Jumping
+        if ((characterController.collisionFlags & CollisionFlags.Below) != 0)
+        {
+            moveVelocity.y = 0;
             if (useArrows)
             {
                 if (Input.GetAxis("VerticalArrow") > 0)
                 {
-                    moveDirection.y = jumpSpeed;
+                    moveVelocity.y += jumpSpeed;
                 }
             }
 
@@ -48,19 +53,24 @@ public class Player_movement : MonoBehaviour
             {
                 if (Input.GetAxis("VerticalWASD") > 0)
                 {
-                    moveDirection.y = jumpSpeed;
+                    moveVelocity.y += jumpSpeed;
                 }
             }
         }
-        
-
-        // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
+        // Apply gravity when not on the ground. Gravity is multiplied by deltaTime twice (once here, and once below
         // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
         // as an acceleration (ms^-2)
-        moveDirection.y -= gravity * Time.deltaTime;
+        moveVelocity.y -= gravity * Time.deltaTime;
+
+
+
+
 
         // Move the controller
-        characterController.Move(moveDirection * Time.deltaTime);
+        Vector3 moveDirection = moveVelocity * Time.deltaTime;
+        characterController.Move(moveDirection);
+
+        //Make sure to never ever move on the z axis  or bad stuff will happen
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
     }
 }
