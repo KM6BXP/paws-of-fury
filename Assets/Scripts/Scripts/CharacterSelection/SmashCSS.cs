@@ -54,6 +54,7 @@ public class SmashCSS : MonoBehaviour
     void Start()
     {
 
+
         gridLayout = GetComponent<GridLayoutGroup>();
         gridSize = GetComponent<RectTransform>();
         gridSize.sizeDelta = new Vector2(gridLayout.cellSize.x * 5, gridLayout.cellSize.y * 2);
@@ -158,7 +159,7 @@ public class SmashCSS : MonoBehaviour
             confirmedCharacter = character;
             playerSlotsContainer.GetChild(player).DOComplete();
             playerSlotsContainer.GetChild(player).DOPunchPosition(Vector3.down * 3, .3f, 10, 1);
-
+            
         }
     }
 

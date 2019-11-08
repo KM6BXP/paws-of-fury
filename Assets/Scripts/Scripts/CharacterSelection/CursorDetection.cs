@@ -13,7 +13,7 @@ public class CursorDetection : MonoBehaviour {
     private float timer;
 
     public Transform currentCharacter;
-
+    public Button confirm;
     public Transform token;
     public bool hasToken;
 
@@ -60,10 +60,10 @@ public class CursorDetection : MonoBehaviour {
         {
             foreach (RaycastResult result in results)
             {
-                if (results[0].gameObject.GetComponent<Button>() != null && Input.GetKeyDown(KeyCode.Space))
+                if (result.gameObject.GetComponent<Button>() != null && Input.GetKeyDown(KeyCode.Space))
                 {
                     Debug.Log("exit");
-                    results[0].gameObject.GetComponent<Button>().onClick.Invoke();
+                    result.gameObject.GetComponent<Button>().onClick.Invoke();
                     timer = 0f;
                     return;
                 }
@@ -125,5 +125,6 @@ public class CursorDetection : MonoBehaviour {
     void TokenFollow (bool trigger)
     {
         hasToken = trigger;
+        confirm.gameObject.SetActive(!trigger);
     }
 }
