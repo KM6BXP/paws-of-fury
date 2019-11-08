@@ -18,7 +18,5 @@ public class CursorMovement : MonoBehaviour {
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -worldSize.x, worldSize.x),
             Mathf.Clamp(transform.position.y, -worldSize.y, worldSize.y),
             transform.position.z);
-
-
     }
 }
