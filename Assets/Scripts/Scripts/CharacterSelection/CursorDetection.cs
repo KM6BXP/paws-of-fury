@@ -5,7 +5,8 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using DG.Tweening;
 
-public class CursorDetection : MonoBehaviour {
+public class CursorDetection : MonoBehaviour
+{
 
     private GraphicRaycaster gr;
     private PointerEventData pointerEventData = new PointerEventData(null);
@@ -17,15 +18,37 @@ public class CursorDetection : MonoBehaviour {
     public Transform token;
     public bool hasToken;
 
-	void Start () {
+    void Start()
+    {
 
         gr = GetComponentInParent<GraphicRaycaster>();
 
         SmashCSS.instance.ShowCharacterInSlot(0, null);
-
+        confirm.gameObject.SetActive(false);
     }
 
-    void Update () {
+    void Update()
+    {
+        //check if a button is pressed
+        pointerEventData.position = Camera.main.WorldToScreenPoint(transform.position);
+        List<RaycastResult> results = new List<RaycastResult>();
+        gr.Raycast(pointerEventData, results);
+
+        //checks if there's a button under the curser to press
+        if (results.Count > 0)
+        {
+            foreach (RaycastResult result in results)
+            {
+                if (result.gameObject.GetComponent<Button>() != null && Input.GetKeyDown(KeyCode.Space))
+                {
+                    Debug.Log("exit");
+                    result.gameObject.GetComponent<Button>().onClick.Invoke();
+                    timer = 0f;
+                    return;
+                }
+            }
+        }
+
         //this handles the token placement
         if (timer < .5f)
             timer += Time.deltaTime;
@@ -53,26 +76,6 @@ public class CursorDetection : MonoBehaviour {
             token.position = transform.position;
         }
 
-
-
-        pointerEventData.position = Camera.main.WorldToScreenPoint(transform.position);
-        List<RaycastResult> results = new List<RaycastResult>();
-        gr.Raycast(pointerEventData, results);
-
-        //checks if there's a button under the curser to press
-        if (results.Count > 0)
-        {
-            foreach (RaycastResult result in results)
-            {
-                if (result.gameObject.GetComponent<Button>() != null && Input.GetKeyDown(KeyCode.Space))
-                {
-                    Debug.Log("exit");
-                    result.gameObject.GetComponent<Button>().onClick.Invoke();
-                    timer = 0f;
-                    return;
-                }
-            }
-        }
         //checks what character is selected i think
         if (hasToken)
         {
@@ -100,13 +103,13 @@ public class CursorDetection : MonoBehaviour {
                 }
             }
         }
-		
-	}
+
+    }
 
     void SetCurrentCharacter(Transform t)
     {
-        
-        if(t != null)
+
+        if (t != null)
         {
             t.Find("selectedBorder").GetComponent<Image>().color = Color.white;
             t.Find("selectedBorder").GetComponent<Image>().DOColor(Color.red, .7f).SetLoops(-1);
@@ -126,7 +129,7 @@ public class CursorDetection : MonoBehaviour {
         }
     }
 
-    void TokenFollow (bool trigger)
+    void TokenFollow(bool trigger)
     {
         hasToken = trigger;
         confirm.gameObject.SetActive(!trigger);
