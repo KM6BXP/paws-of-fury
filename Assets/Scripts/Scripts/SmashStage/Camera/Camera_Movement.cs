@@ -9,9 +9,12 @@ public class Camera_Movement : MonoBehaviour
 
     public List<Transform> targets;
     public Vector3 offset;
+    //how smooth it should be
     public float smoothTime = 0.5f;
+    //how big should the Δy be for the offset to cancel
     public float offset_falloff = 5;
 
+    //this controls the zoom
     public float minZoom = 40f;
     public float maxZoom = 10f;
     public float limitZoom = 50f;
@@ -22,11 +25,13 @@ public class Camera_Movement : MonoBehaviour
 
     public void Start()
     {
+        //get components and calculate bounds, fun fact something here is wrong and creates the zoom in effect when the level is loaded
         GetBounds();
         cam = GetComponent<Camera>();
         transform.position = bounds.center + offset;
     }
 
+    //updates the camera in the LateUpdate because we want to make sure this executes after moving the players
     private void LateUpdate()
     {
         if (targets.Count == 0 || !dynamic_camera)
@@ -36,12 +41,14 @@ public class Camera_Movement : MonoBehaviour
         Zoom();
     }
 
+    //sets the zoom
     private void Zoom()
     {
         float newZoom = Mathf.Lerp(maxZoom, minZoom, Mathf.Max(bounds.size.x, bounds.size.y) / limitZoom);
         cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, newZoom, Time.deltaTime);
     }
 
+    //handles the motion
     private void Move()
     {
         Vector3 centerPoint = GetCenterPoint();
@@ -54,6 +61,7 @@ public class Camera_Movement : MonoBehaviour
         transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);
     }
 
+    //this returns the bounds of the characters
     void GetBounds()
     {
         bounds = new Bounds(targets[0].position, Vector3.zero);
@@ -63,7 +71,7 @@ public class Camera_Movement : MonoBehaviour
         }
     }
 
-
+    //this gets the centre
     Vector3 GetCenterPoint()
     {
         if(targets.Count == 1)

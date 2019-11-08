@@ -23,6 +23,8 @@ public class SmashCSS : MonoBehaviour
 
 
     public static SmashCSS instance;
+
+    //debug clears the character grid and readds them every frame (only use when fine tuning character sprites, this causes a gicantic fps drop)
     public bool debug = false;
     [Header("Characters List")]
     public List<Character> characters = new List<Character>();
@@ -42,6 +44,7 @@ public class SmashCSS : MonoBehaviour
 
     private void Update()
     {
+        //the debug feature
         if (!debug)
             return;
         foreach (Transform child in gridLayout.transform)
@@ -51,10 +54,9 @@ public class SmashCSS : MonoBehaviour
         SpawnCharacters();
     }
 
+    //get components and spawn characters
     void Start()
     {
-
-
         gridLayout = GetComponent<GridLayoutGroup>();
         gridSize = GetComponent<RectTransform>();
         gridSize.sizeDelta = new Vector2(gridLayout.cellSize.x * 5, gridLayout.cellSize.y * 2);
@@ -67,12 +69,15 @@ public class SmashCSS : MonoBehaviour
         SpawnCharacters();
     }
 
+    //this was appearently so hard to do it took a week to crack this
     private void SpawnCharacters()
     {
-
         int spawnedCharacters = 0;
+        //default grid size
         rowSize = 4;
         rowCount = 1;
+
+        //the magic, don't touch this plz
         foreach (Character character in characters)
         {
             SpawnCharacterCell(character);
@@ -91,6 +96,7 @@ public class SmashCSS : MonoBehaviour
         }
     }
 
+    //create character slot with sprite
     private void SpawnCharacterCell(Character character)
     {
         GameObject charCell = Instantiate(charCellPrefab, transform);
@@ -109,6 +115,7 @@ public class SmashCSS : MonoBehaviour
         artwork.GetComponent<RectTransform>().sizeDelta *= character.zoom;
     }
 
+    //show character in slot
     public void ShowCharacterInSlot(int player, Character character)
     {
         bool nullChar = (character == null);
@@ -152,6 +159,7 @@ public class SmashCSS : MonoBehaviour
         slot.Find("iconAndPx").GetComponentInChildren<TextMeshProUGUI>().text = playernumber;
     }
 
+    //make it shake when selected
     public void ConfirmCharacter(int player, Character character)
     {
         if (confirmedCharacter == null)
@@ -163,6 +171,7 @@ public class SmashCSS : MonoBehaviour
         }
     }
 
+    //set sprite center
     public Vector2 uiPivot(Sprite sprite)
     {
         Vector2 pixelSize = new Vector2(sprite.texture.width, sprite.texture.height);

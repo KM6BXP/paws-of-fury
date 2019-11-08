@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//a singleton to move data between scenes without creating duplicate global classes
 public class Global : MonoBehaviour
 {
     #region singleton

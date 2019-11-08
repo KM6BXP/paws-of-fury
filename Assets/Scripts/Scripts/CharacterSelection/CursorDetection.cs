@@ -26,6 +26,7 @@ public class CursorDetection : MonoBehaviour {
     }
 
     void Update () {
+        //this handles the token placement
         if (timer < .5f)
             timer += Time.deltaTime;
         //CONFIRM
@@ -52,10 +53,13 @@ public class CursorDetection : MonoBehaviour {
             token.position = transform.position;
         }
 
+
+
         pointerEventData.position = Camera.main.WorldToScreenPoint(transform.position);
         List<RaycastResult> results = new List<RaycastResult>();
         gr.Raycast(pointerEventData, results);
 
+        //checks if there's a button under the curser to press
         if (results.Count > 0)
         {
             foreach (RaycastResult result in results)
@@ -69,7 +73,7 @@ public class CursorDetection : MonoBehaviour {
                 }
             }
         }
-
+        //checks what character is selected i think
         if (hasToken)
         {
             if (results.Count > 0 && results[0].gameObject.tag == "Selectable")

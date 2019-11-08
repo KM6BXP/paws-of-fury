@@ -9,6 +9,7 @@ public class platform_movement : MonoBehaviour
     public float speed = 1;
 
     private Rigidbody rbody;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,8 @@ public class platform_movement : MonoBehaviour
         rbody = transform.GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
+    // This is not that hard, just a sine wave with an amplitude of distance and a wavelength of speed
+    //sin(x*speed)*distance
     void Update()
     {
         rbody.MovePosition(new Vector3(pos.x , pos.y + Mathf.Sin(Time.time * speed) * distance, pos.z));
