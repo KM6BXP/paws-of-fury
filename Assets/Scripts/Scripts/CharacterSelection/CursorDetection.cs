@@ -52,7 +52,7 @@ public class CursorDetection : MonoBehaviour
             timer += Time.deltaTime;
 
         //CONFIRM
-        if (Input.GetKeyDown(KeyCode.Space) && hasToken && timer >= .5f)
+        if (Input.GetKeyDown(KeyCode.Space) && hasToken && existsToken && timer >= .5f)
         {
             if (currentCharacter != null)
             {

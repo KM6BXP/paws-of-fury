@@ -49,7 +49,7 @@ public class SmashCSS : MonoBehaviour
             return;
         foreach (Transform child in gridLayout.transform)
         {
-            GameObject.Destroy(child.gameObject);
+            Destroy(child.gameObject);
         }
         SpawnCharacters();
     }
