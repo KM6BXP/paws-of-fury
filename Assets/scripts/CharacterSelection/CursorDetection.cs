@@ -10,6 +10,7 @@ public class CursorDetection : MonoBehaviour
 
     private GraphicRaycaster gr;
     private PointerEventData pointerEventData = new PointerEventData(null);
+
     private float timer;
 
     public Transform currentCharacter;
@@ -20,30 +21,20 @@ public class CursorDetection : MonoBehaviour
 
     void Start()
     {
+
         gr = GetComponentInParent<GraphicRaycaster>();
-<<<<<<< HEAD:Assets/scripts/CharacterSelection/CursorDetection.cs
-=======
-        pointerEventData.position = Camera.main.WorldToScreenPoint(transform.position);
->>>>>>> parent of 05e8b50... Revert "optimized cursordetection":Assets/Scripts/Scripts/CharacterSelection/CursorDetection.cs
         SmashCSS.instance.ShowCharacterInSlot(0, null);
         confirm.gameObject.SetActive(false);
     }
 
     void Update()
     {
-<<<<<<< HEAD:Assets/scripts/CharacterSelection/CursorDetection.cs
 
         //send a ray to see what's under the cursor
         pointerEventData.position = Camera.main.WorldToScreenPoint(transform.position);
         List<RaycastResult> results = new List<RaycastResult>();
         gr.Raycast(pointerEventData, results);
         Debug.Log(results);
-=======
-        //send a ray to see what's under the cursor
-        List<RaycastResult> results = new List<RaycastResult>();
-        gr.Raycast(pointerEventData, results);
-
->>>>>>> parent of 05e8b50... Revert "optimized cursordetection":Assets/Scripts/Scripts/CharacterSelection/CursorDetection.cs
         //checks if there's a button under the cursor to press
         if (results.Count > 0)
         {
@@ -59,10 +50,9 @@ public class CursorDetection : MonoBehaviour
             }
         }
 
-        //handles cooldown
+        //this handles the token placement
         if (timer < .5f)
             timer += Time.deltaTime;
-
         //CONFIRM
         if (Input.GetKeyDown(KeyCode.Space) && hasToken && existsToken && timer >= .5f)
         {
@@ -82,7 +72,6 @@ public class CursorDetection : MonoBehaviour
             timer = 0f;
         }
 
-        //update token position
         if (hasToken)
         {
             token.position = transform.position;
@@ -115,10 +104,12 @@ public class CursorDetection : MonoBehaviour
                 }
             }
         }
+
     }
 
     void SetCurrentCharacter(Transform t)
     {
+
         if (t != null)
         {
             t.Find("selectedBorder").GetComponent<Image>().color = Color.white;
