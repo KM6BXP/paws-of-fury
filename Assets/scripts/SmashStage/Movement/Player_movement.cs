@@ -17,7 +17,7 @@ public class Player_movement : MonoBehaviour
 
     private bool m_isJumpInUse = false;
 
-    private Vector3 moveVelocity = Vector3.zero;
+    public Vector3 moveVelocity = Vector3.zero;
     private int jump = 0;
     void Start()
     {
