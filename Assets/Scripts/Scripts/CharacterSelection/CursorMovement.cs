@@ -14,8 +14,8 @@ public class CursorMovement : MonoBehaviour {
 
     void Update () {
 
-        float x = Input.GetAxis("HorizontalWASD");
-        float y = Input.GetAxis("VerticalWASD");
+        float x = Input.GetAxisRaw("HorizontalWASD");
+        float y = Input.GetAxisRaw("VerticalWASD");
 
         transform.position += new Vector3(x, y, 0) * Time.deltaTime * speed;
 

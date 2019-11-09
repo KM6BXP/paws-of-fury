@@ -413,7 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77562681f95c5c845bba5cda8bbc4157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 14
 --- !u!114 &283504506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1506,7 +1506,6 @@ MonoBehaviour:
   gridBgPrefab: {fileID: 1656363544186126, guid: 1de47e36ee13e7d4a85a1dad97c2e372,
     type: 3}
   playerSlotsContainer: {fileID: 1547821892}
-  confirm: {fileID: 932536651}
   confirmedCharacter: {fileID: 0}
 --- !u!114 &720315230
 MonoBehaviour:
