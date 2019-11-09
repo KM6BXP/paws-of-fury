@@ -10,7 +10,6 @@ public class CursorDetection : MonoBehaviour
 
     private GraphicRaycaster gr;
     private PointerEventData pointerEventData = new PointerEventData(null);
-
     private float timer;
 
     public Transform currentCharacter;
@@ -21,21 +20,19 @@ public class CursorDetection : MonoBehaviour
 
     void Start()
     {
-
         gr = GetComponentInParent<GraphicRaycaster>();
-
+        pointerEventData.position = Camera.main.WorldToScreenPoint(transform.position);
         SmashCSS.instance.ShowCharacterInSlot(0, null);
         confirm.gameObject.SetActive(false);
     }
 
     void Update()
     {
-        //check if a button is pressed
-        pointerEventData.position = Camera.main.WorldToScreenPoint(transform.position);
+        //send a ray to see what's under the cursor
         List<RaycastResult> results = new List<RaycastResult>();
         gr.Raycast(pointerEventData, results);
 
-        //checks if there's a button under the curser to press
+        //checks if there's a button under the cursor to press
         if (results.Count > 0)
         {
             foreach (RaycastResult result in results)
@@ -50,9 +47,10 @@ public class CursorDetection : MonoBehaviour
             }
         }
 
-        //this handles the token placement
+        //handles cooldown
         if (timer < .5f)
             timer += Time.deltaTime;
+
         //CONFIRM
         if (Input.GetKeyDown(KeyCode.Space) && hasToken && timer >= .5f)
         {
@@ -72,6 +70,7 @@ public class CursorDetection : MonoBehaviour
             timer = 0f;
         }
 
+        //update token position
         if (hasToken)
         {
             token.position = transform.position;
@@ -104,12 +103,10 @@ public class CursorDetection : MonoBehaviour
                 }
             }
         }
-
     }
 
     void SetCurrentCharacter(Transform t)
     {
-
         if (t != null)
         {
             t.Find("selectedBorder").GetComponent<Image>().color = Color.white;
