@@ -17,6 +17,7 @@ public class CursorDetection : MonoBehaviour
     public Button confirm;
     public Transform token;
     public bool hasToken;
+    public bool existsToken;
 
     void Start()
     {
@@ -64,7 +65,7 @@ public class CursorDetection : MonoBehaviour
         }
 
         //CANCEL
-        if (Input.GetKeyDown(KeyCode.Space) && !hasToken && timer >= .5f)
+        if (Input.GetKeyDown(KeyCode.Space) && !hasToken && existsToken && timer >= .5f)
         {
             SmashCSS.instance.confirmedCharacter = null;
             TokenFollow(true);
