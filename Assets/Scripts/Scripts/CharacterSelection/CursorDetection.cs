@@ -21,7 +21,6 @@ public class CursorDetection : MonoBehaviour
     void Start()
     {
         gr = GetComponentInParent<GraphicRaycaster>();
-        pointerEventData.position = Camera.main.WorldToScreenPoint(transform.position);
         SmashCSS.instance.ShowCharacterInSlot(0, null);
         confirm.gameObject.SetActive(false);
     }
@@ -29,9 +28,10 @@ public class CursorDetection : MonoBehaviour
     void Update()
     {
         //send a ray to see what's under the cursor
+        pointerEventData.position = Camera.main.WorldToScreenPoint(transform.position);
         List<RaycastResult> results = new List<RaycastResult>();
         gr.Raycast(pointerEventData, results);
-
+        Debug.Log(results);
         //checks if there's a button under the cursor to press
         if (results.Count > 0)
         {
