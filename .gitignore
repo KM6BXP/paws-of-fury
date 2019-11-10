@@ -61,3 +61,8 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+Assets/UnityBuildSettings/UnityBuildSettings.asset
+Assets/Plugins/UnityBuild
+Assets/Plugins/UnityBuild.meta
+Assets/Plugins/UnityBuild-ZipFile
+Assets/Plugins/UnityBuild-ZipFile.meta

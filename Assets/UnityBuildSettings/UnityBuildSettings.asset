@@ -35,12 +35,12 @@ MonoBehaviour:
   m_Name: UnityBuildSettings
   m_EditorClassIdentifier: 
   _basicSettings:
-    baseBuildFolder: Build
-    buildPath: $BUILD/$PLATFORM/$YEAR-$MONTH-$DAY
+    baseBuildFolder: B:\Unity\Build
+    buildPath: $BUILD/$PLATFORM/$ARCHITECTURE/$YEAR-$MONTH-$DAY
     openFolderPostBuild: 1
   _productParameters:
-    buildCounter: 2
-    lastGeneratedVersion: 20191109111301
+    buildCounter: 1
+    lastGeneratedVersion: 20191109113044
     version: $YEAR$MONTH$DAY$TIME
     autoGenerate: 1
   _releaseTypeList:
@@ -75,7 +75,7 @@ MonoBehaviour:
       binaryNameFormat: '{0}.exe'
       dataDirNameFormat: '{0}_Data'
       targetGroup: 1
-    - enabled: 1
+    - enabled: 0
       distributionList:
         distributions: []
       architectures:
@@ -95,20 +95,20 @@ MonoBehaviour:
       targetGroup: 1
   _projectConfigurations:
     configSet:
-      _Buckets: ffffffff05000000ffffffff04000000ffffffff0200000003000000
-      _HashCodes: d2aa19290a94686ee2b9fb3fe3f4c9205762525f6678124c00000000
-      _Next: ffffffffffffffffffffffffffffffff010000000000000000000000
-      _Count: 6
-      _Version: 6
+      _Buckets: ffffffff03000000ffffffff01000000ffffffff02000000ffffffff
+      _HashCodes: d2aa19290a94686ee2b9fb3f6678124c000000000000000000000000
+      _Next: ffffffffffffffffffffffff00000000000000000000000000000000
+      _Count: 4
+      _Version: 4
       _FreeList: -1
       _FreeCount: 0
       _Keys:
       - Test/PC/Windows x86
       - Test/PC/Windows x64
       - Test/PC
-      - Test/Linux/Linux Universal
-      - Test/Linux
       - Test
+      - 
+      - 
       - 
       _Values:
       - enabled: 1
@@ -120,14 +120,12 @@ MonoBehaviour:
         - Test/PC/Windows x86
         - Test/PC/Windows x64
       - enabled: 1
-        childKeys: []
-      - enabled: 1
-        childKeys:
-        - Test/Linux/Linux Universal
-      - enabled: 1
         childKeys:
         - Test/PC
-        - Test/Linux
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
       - enabled: 1
         childKeys: []
     showViewOptions: 0
