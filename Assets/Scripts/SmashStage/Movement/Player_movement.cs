@@ -58,6 +58,8 @@ public class Player_movement : MonoBehaviour
             // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
             // as an acceleration (ms^-2)
             moveVelocity.y -= gravity * Time.deltaTime * weight;
+            if(jump < 1)
+                jump = 1;
         }
         if (!m_isJumpInUse && jump < 2)
         {
