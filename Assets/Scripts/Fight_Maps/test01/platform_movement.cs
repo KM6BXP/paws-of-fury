@@ -23,4 +23,14 @@ public class platform_movement : MonoBehaviour
     {
         rbody.MovePosition(new Vector3(pos.x , pos.y + Mathf.Sin(Time.time * speed) * distance, pos.z));
     }
+
+    void OnTriggerEnter(Collider hit)
+    {
+        hit.transform.parent = transform;
+    }
+
+    void OnTriggerExit(Collider hit)
+    {
+        hit.transform.parent = null;
+    }
 }
