@@ -34,7 +34,6 @@ public class CursorDetection : MonoBehaviour
         pointerEventData.position = Camera.main.WorldToScreenPoint(transform.position);
         List<RaycastResult> results = new List<RaycastResult>();
         gr.Raycast(pointerEventData, results);
-        Debug.Log(results);
         //checks if there's a button under the cursor to press
         if (results.Count > 0)
         {
