@@ -81,10 +81,10 @@ public class Player_movement : MonoBehaviour
             m_isJumpInUse = true;
         }
         if (useArrows && Input.GetAxis("VerticalArrow") == 0)
-                m_isJumpInUse = false;
+            m_isJumpInUse = false;
 
         if (!useArrows && Input.GetAxis("VerticalWASD") == 0)
-                m_isJumpInUse = false;
+            m_isJumpInUse = false;
 
 
         // Move the controller
