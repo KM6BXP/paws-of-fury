@@ -46,21 +46,19 @@ public class Player_movement : MonoBehaviour
         }
 
         //Jumping
-        if ((characterController.collisionFlags & CollisionFlags.Below) != 0)
+        if (characterController.isGrounded)
         {
             //dont want to move down when touching ground
             moveVelocity.y = 0;
             jump = 0;
         }
-        else
-        {
-            // Apply gravity when not on the ground. Gravity is multiplied by deltaTime twice (once here, and once below
-            // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
-            // as an acceleration (ms^-2)
-            moveVelocity.y -= gravity * Time.deltaTime * weight;
-            if(jump < 1)
-                jump = 1;
-        }
+        // Always apply gravity cuz unity weird. Gravity is multiplied by deltaTime twice (once here, and once below
+        // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
+        // as an acceleration (ms^-2)
+        moveVelocity.y -= gravity * Time.deltaTime * weight;
+        if (jump < 1 && !characterController.isGrounded)
+            jump = 1;
+
         if (!m_isJumpInUse && jump < 2)
         {
             if (useArrows)
