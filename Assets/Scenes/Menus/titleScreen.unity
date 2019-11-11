@@ -378,7 +378,7 @@ MonoBehaviour:
 
     Created by The Paws of Fury Dev Team.
 
-    Version 2019.1110.1
+    Version 2019.1111.0
 
     DEVELOPMENT BUILD'
   m_isRightToLeft: 0
@@ -802,7 +802,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 362.4
+  m_fontSize: 224.05
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
