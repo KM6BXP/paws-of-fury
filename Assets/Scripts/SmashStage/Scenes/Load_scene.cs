@@ -5,9 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class Load_scene : MonoBehaviour
 {
-
-    //this script is very hard to understands because it loads a scene
     public SceneReference scene;
+    public static Load_scene instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+    //this script is very hard to understand because it loads a scene
     public void internal_loadscene()
     {
         SceneManager.LoadScene(scene.ScenePath, LoadSceneMode.Single);

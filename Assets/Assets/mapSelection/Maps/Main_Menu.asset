@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67e28ff2aa568d54190f32cff5f74b04, type: 3}
-  m_Name: Test01
+  m_Name: Main_Menu
   m_EditorClassIdentifier: 
-  mapName: Test01
+  mapName: Main Menu
   mapSprite: {fileID: 21300000, guid: 28964b8ae9436b140a9f7628dcb08ab8, type: 3}
   mapIcon: {fileID: 21300000, guid: 28964b8ae9436b140a9f7628dcb08ab8, type: 3}
   zoom: 0.5
   backgroundColor: {r: 0, g: 0, b: 0, a: 0}
   mapScene:
-    sceneAsset: {fileID: 102900000, guid: 9d4189d0964532b42a38ee1e7f73b3fd, type: 3}
-    scenePath: Assets/Scenes/Fight_Maps/test01/test01.unity
+    sceneAsset: {fileID: 102900000, guid: 1b894a26595d155488db3748b590df67, type: 3}
+    scenePath: Assets/Scenes/Menus/titleScreen.unity

@@ -329,6 +329,7 @@ GameObject:
   m_Component:
   - component: {fileID: 545060786}
   - component: {fileID: 545060788}
+  - component: {fileID: 545060789}
   - component: {fileID: 545060787}
   m_Layer: 5
   m_Name: Copyright
@@ -374,13 +375,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'All characters belong to their respective owners.
-
-    Created by The Paws of Fury Dev Team.
-
-    Version 2019.1111.0
-
-    DEVELOPMENT BUILD'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -408,7 +403,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 38.7
+  m_fontSize: 24
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -449,13 +444,13 @@ MonoBehaviour:
   m_margin: {x: 4.644909, y: -4.1583443, z: -1810.8274, w: 0}
   m_textInfo:
     textComponent: {fileID: 545060787}
-    characterCount: 125
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 18
-    wordCount: 21
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 4
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -480,6 +475,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 545060785}
   m_CullTransparentMesh: 0
+--- !u!114 &545060789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545060785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e220723906a6b489d65339a0a5f197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  copyrights: 'All characters belong to their respective owners.
+
+    Created by The Paws of Fury Dev Team.
+
+    Version %version%
+
+    DEVELOPMENT BUILD'
+  text: {fileID: 545060787}
 --- !u!1 &549841530
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,7 +817,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 224.05
+  m_fontSize: 312.4
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1

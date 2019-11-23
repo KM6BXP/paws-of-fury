@@ -133,14 +133,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1547821892}
     m_Modifications:
-    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Name
-      value: PlayerSlot (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 224357834719201916, guid: bbbe38bfd7c3a4a4480da07e9483748e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -245,6 +237,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.99994487
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
+      propertyPath: m_Name
+      value: PlayerSlot (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1146365685828586, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
       propertyPath: m_Layer
@@ -1088,10 +1088,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1547821892}
     m_Modifications:
-    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 224357834719201916, guid: bbbe38bfd7c3a4a4480da07e9483748e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1181,6 +1177,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1146365685828586, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
       propertyPath: m_Layer
@@ -2633,14 +2633,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1547821892}
     m_Modifications:
-    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Name
-      value: PlayerSlot (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 224357834719201916, guid: bbbe38bfd7c3a4a4480da07e9483748e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2745,6 +2737,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.99994487
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
+      propertyPath: m_Name
+      value: PlayerSlot (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1146365685828586, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
       propertyPath: m_Layer
@@ -2915,14 +2915,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1547821892}
     m_Modifications:
-    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Name
-      value: PlayerSlot (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 224357834719201916, guid: bbbe38bfd7c3a4a4480da07e9483748e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3027,6 +3019,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.99994487
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
+      propertyPath: m_Name
+      value: PlayerSlot (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1146365685828586, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
       propertyPath: m_Layer
@@ -3349,8 +3349,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene:
-    sceneAsset: {fileID: 102900000, guid: 9d4189d0964532b42a38ee1e7f73b3fd, type: 3}
-    scenePath: Assets/Scenes/Fight_Maps/test01/test01.unity
+    sceneAsset: {fileID: 102900000, guid: 0cc3a387a99e7e34592313fc351fc63d, type: 3}
+    scenePath: Assets/Scenes/Menus/mapSelect.unity
 --- !u!4 &6436545144550362116
 Transform:
   m_ObjectHideFlags: 0

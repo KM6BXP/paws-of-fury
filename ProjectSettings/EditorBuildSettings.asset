@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fight_Maps/test01/test01.unity
     guid: 9d4189d0964532b42a38ee1e7f73b3fd
+  - enabled: 1
+    path: Assets/Scenes/Menus/mapSelect.unity
+    guid: 0cc3a387a99e7e34592313fc351fc63d
   m_configObjects: {}

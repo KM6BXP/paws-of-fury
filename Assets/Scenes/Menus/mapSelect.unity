@@ -1417,6 +1417,7 @@ MonoBehaviour:
   debug: 0
   maps:
   - {fileID: 11400000, guid: 9563d1c99ed03b544b8add019ef9a55f, type: 2}
+  - {fileID: 11400000, guid: 457cf543caa9b044f87d2a5ab4cda0a4, type: 2}
   charCellPrefab: {fileID: 1518450411981782, guid: c53dadccb54e53441bcbddeabbab3a62,
     type: 3}
   gridBgPrefab: {fileID: 1656363544186126, guid: 1de47e36ee13e7d4a85a1dad97c2e372,
@@ -3264,8 +3265,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene:
-    sceneAsset: {fileID: 102900000, guid: 9d4189d0964532b42a38ee1e7f73b3fd, type: 3}
-    scenePath: Assets/Scenes/Fight_Maps/test01/test01.unity
+    sceneAsset: {fileID: 0}
+    scenePath: 
 --- !u!4 &6436545144550362116
 Transform:
   m_ObjectHideFlags: 0
