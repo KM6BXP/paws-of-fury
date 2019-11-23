@@ -133,14 +133,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1547821892}
     m_Modifications:
-    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Name
-      value: PlayerSlot (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 224357834719201916, guid: bbbe38bfd7c3a4a4480da07e9483748e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -245,6 +237,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.99994487
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
+      propertyPath: m_Name
+      value: PlayerSlot (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1146365685828586, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
       propertyPath: m_Layer
@@ -459,10 +459,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 283504503}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eadb2f5ac92a3642bf1eb5b2a53e672, type: 3}
+  m_Script: {fileID: 11500000, guid: 822aba12c62df5241b95c22214954626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCharacter: {fileID: 0}
+  currentMap: {fileID: 0}
   confirm: {fileID: 932536651}
   token: {fileID: 886748736}
   hasToken: 1
@@ -1088,10 +1088,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1547821892}
     m_Modifications:
-    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 224357834719201916, guid: bbbe38bfd7c3a4a4480da07e9483748e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1182,81 +1178,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1146365685828586, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1164726984744952, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1204976817804704, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1440864263747568, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1556927483580794, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1637531612189744, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1647993723419170, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1666612584328862, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1774645796316872, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1849275403282010, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 114233702904287376, guid: bbbe38bfd7c3a4a4480da07e9483748e,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114233702904287376, guid: bbbe38bfd7c3a4a4480da07e9483748e,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 114233702904287376, guid: bbbe38bfd7c3a4a4480da07e9483748e,
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 114258440880308338, guid: bbbe38bfd7c3a4a4480da07e9483748e,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114258440880308338, guid: bbbe38bfd7c3a4a4480da07e9483748e,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114716692343662628, guid: bbbe38bfd7c3a4a4480da07e9483748e,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114716692343662628, guid: bbbe38bfd7c3a4a4480da07e9483748e,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
 --- !u!1 &652317000
@@ -1484,7 +1410,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 720315227}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 568533692e729004aa0e6f0de4433afa, type: 3}
+  m_Script: {fileID: 11500000, guid: 71df169ad17c6ed40a81d2e758882b20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slotArtworkSize: {x: 0, y: 0}
@@ -1495,7 +1421,7 @@ MonoBehaviour:
     type: 3}
   gridBgPrefab: {fileID: 1656363544186126, guid: 1de47e36ee13e7d4a85a1dad97c2e372,
     type: 3}
-  playerSlotsContainer: {fileID: 47932221}
+  playerSlotsContainer: {fileID: 1547821892}
   confirmedMap: {fileID: 0}
 --- !u!114 &720315230
 MonoBehaviour:
@@ -2622,14 +2548,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1547821892}
     m_Modifications:
-    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Name
-      value: PlayerSlot (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 224357834719201916, guid: bbbe38bfd7c3a4a4480da07e9483748e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2734,6 +2652,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.99994487
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
+      propertyPath: m_Name
+      value: PlayerSlot (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1146365685828586, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
       propertyPath: m_Layer
@@ -2904,14 +2830,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1547821892}
     m_Modifications:
-    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Name
-      value: PlayerSlot (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 224357834719201916, guid: bbbe38bfd7c3a4a4480da07e9483748e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3016,6 +2934,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.99994487
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
+      propertyPath: m_Name
+      value: PlayerSlot (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1146365685828586, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
       propertyPath: m_Layer

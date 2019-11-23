@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Test01
   m_EditorClassIdentifier: 
   mapName: Test01
-  mapSprite: {fileID: 21300000, guid: 8ff3aa7af936a83489658b2f346b0593, type: 3}
-  mapIcon: {fileID: 21300000, guid: e4ba2a870fc5c344f862b51b5cbb6b42, type: 3}
-  zoom: 0.97
+  mapSprite: {fileID: 21300000, guid: 28964b8ae9436b140a9f7628dcb08ab8, type: 3}
+  mapIcon: {fileID: 21300000, guid: 28964b8ae9436b140a9f7628dcb08ab8, type: 3}
+  zoom: 0.5
   backgroundColor: {r: 0, g: 0, b: 0, a: 0}

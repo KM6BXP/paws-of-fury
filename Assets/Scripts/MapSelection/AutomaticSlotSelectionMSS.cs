@@ -11,12 +11,12 @@ public class AutomaticSlotSelectionMSS : MonoBehaviour {
 
         int random = Random.Range(0, SmashMSS.instance.maps.Count - 1);
 
-        Map randomChar = SmashMSS.instance.maps[random];
+        Map randomMap = SmashMSS.instance.maps[random];
 
-        SmashMSS.instance.ShowMapInSlot(transform.GetSiblingIndex(), randomChar);
+        SmashMSS.instance.ShowMapInSlot(transform.GetSiblingIndex(), randomMap);
 
         transform.Find("artwork").GetComponent<RectTransform>().sizeDelta = artworkOriginalSize;
-        transform.Find("artwork").GetComponent<RectTransform>().sizeDelta *= randomChar.zoom;
+        transform.Find("artwork").GetComponent<RectTransform>().sizeDelta *= randomMap.zoom;
     }
 	
 }
