@@ -620,7 +620,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.000059128, y: 104.6}
-  m_SizeDelta: {x: 1080, y: 354.7}
+  m_SizeDelta: {x: 1674, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &326172588
 MonoBehaviour:
@@ -1417,7 +1417,7 @@ MonoBehaviour:
   debug: 0
   maps:
   - {fileID: 11400000, guid: 9563d1c99ed03b544b8add019ef9a55f, type: 2}
-  - {fileID: 11400000, guid: 457cf543caa9b044f87d2a5ab4cda0a4, type: 2}
+  - {fileID: 11400000, guid: 856cadf383bfc354880df1f08c6ca9e9, type: 2}
   charCellPrefab: {fileID: 1518450411981782, guid: c53dadccb54e53441bcbddeabbab3a62,
     type: 3}
   gridBgPrefab: {fileID: 1656363544186126, guid: 1de47e36ee13e7d4a85a1dad97c2e372,
@@ -1967,8 +1967,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -76.5, y: 0}
-  m_SizeDelta: {x: 1233, y: 92.8}
+  m_AnchoredPosition: {x: -0.0094147, y: 0}
+  m_SizeDelta: {x: 1623.2, y: 92.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1086155257
 MonoBehaviour:
