@@ -133,6 +133,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1547821892}
     m_Modifications:
+    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
+      propertyPath: m_Name
+      value: PlayerSlot (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 224357834719201916, guid: bbbe38bfd7c3a4a4480da07e9483748e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -237,14 +245,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.99994487
-      objectReference: {fileID: 0}
-    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Name
-      value: PlayerSlot (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1146365685828586, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
       propertyPath: m_Layer
@@ -1418,6 +1418,7 @@ MonoBehaviour:
   maps:
   - {fileID: 11400000, guid: 9563d1c99ed03b544b8add019ef9a55f, type: 2}
   - {fileID: 11400000, guid: 856cadf383bfc354880df1f08c6ca9e9, type: 2}
+  - {fileID: 11400000, guid: 18fdd489526631141b4c9274a4e4238f, type: 2}
   charCellPrefab: {fileID: 1518450411981782, guid: c53dadccb54e53441bcbddeabbab3a62,
     type: 3}
   gridBgPrefab: {fileID: 1656363544186126, guid: 1de47e36ee13e7d4a85a1dad97c2e372,
@@ -2549,6 +2550,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1547821892}
     m_Modifications:
+    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
+      propertyPath: m_Name
+      value: PlayerSlot (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 224357834719201916, guid: bbbe38bfd7c3a4a4480da07e9483748e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2653,14 +2662,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.99994487
-      objectReference: {fileID: 0}
-    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Name
-      value: PlayerSlot (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1146365685828586, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
       propertyPath: m_Layer
@@ -2831,6 +2832,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1547821892}
     m_Modifications:
+    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
+      propertyPath: m_Name
+      value: PlayerSlot (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 224357834719201916, guid: bbbe38bfd7c3a4a4480da07e9483748e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2935,14 +2944,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.99994487
-      objectReference: {fileID: 0}
-    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Name
-      value: PlayerSlot (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1654834398159342, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1146365685828586, guid: bbbe38bfd7c3a4a4480da07e9483748e, type: 3}
       propertyPath: m_Layer

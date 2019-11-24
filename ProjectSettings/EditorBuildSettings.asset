@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fight_Maps/test02/test02.unity
     guid: 7ab9e42f9f608c54086ca2cc12abd9cd
+  - enabled: 1
+    path: Assets/Scenes/Fight_Maps/test03/test03.unity
+    guid: cdd8dd4c45374494e99dad68e248f88f
   m_configObjects: {}

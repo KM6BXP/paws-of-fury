@@ -5,8 +5,20 @@ using UnityEngine;
 public class platform_movement : MonoBehaviour
 {
     Vector3 pos;
-    public float distance = 1;
-    public float speed = 1;
+    public bool X;
+    public float distanceX = 1;
+    public float speedX = 1;
+    public float offsetX = 0;
+
+    public bool Y;
+    public float distanceY = 1;
+    public float speedY = 1;
+    public float offsetY = 0;
+
+    public bool Z;
+    public float distanceZ = 1;
+    public float speedZ = 1;
+    public float offsetZ = 0;
 
     private Rigidbody rbody;
 
@@ -21,16 +33,35 @@ public class platform_movement : MonoBehaviour
     //sin(x*speed)*distance
     void Update()
     {
-        rbody.MovePosition(new Vector3(pos.x , pos.y + Mathf.Sin(Time.time * speed) * distance, pos.z));
+        Vector3 moveVector = pos;
+        if (Y)
+            moveVector.y = pos.y + Mathf.Sin(Time.time * speedY + offsetY) * distanceY;
+        if (X)
+            moveVector.x = pos.x + Mathf.Sin(Time.time * speedX + offsetX) * distanceX;
+        if (Z)
+            moveVector.z = pos.z + Mathf.Sin(Time.time * speedZ + offsetZ) * distanceZ;
+        rbody.MovePosition(moveVector);
     }
 
-    void OnTriggerEnter(Collider hit)
+    void OnTriggerStay(Collider hit)
     {
-        hit.transform.parent = transform;
+        if (hit.tag == "Player")
+        {
+            if (hit.GetComponent<Player_movement>().isGrounded())
+            {
+                hit.transform.parent = transform;
+            }
+        }
     }
-
     void OnTriggerExit(Collider hit)
     {
-        hit.transform.parent = null;
+        if (hit.tag == "Player")
+        {
+            if (!hit.GetComponent<Player_movement>().isGrounded())
+            {
+                hit.transform.parent = null;
+            }
+        }
+
     }
 }

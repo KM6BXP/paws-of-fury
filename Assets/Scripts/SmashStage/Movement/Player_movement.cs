@@ -77,13 +77,16 @@ public class Player_movement : MonoBehaviour
             m_isJumpInUse = false;
 
         //Jumping
-        if (isGrounded())
+        if (isGrounded() && transform.parent == null)
         {
             //Dont want to move down when touching ground
             moveVelocity.y = -gravity * Time.deltaTime * weight; ;
+        }
+        if (isGrounded())
+        {
             jump = 0;
         }
-        else
+        if(!isGrounded())
         {
             // Apply gravity when not on the ground. Gravity is multiplied by deltaTime twice (once here, and once below
             // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
