@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Selectable
   - clickable
+  - Level
   layers:
   - Default
   - TransparentFX
@@ -18,8 +19,8 @@ TagManager:
   - PostProcessing
   - Ignore UI
   - Player
-  - 
-  - 
+  - Feet
+  - Deathplane
   - 
   - 
   - 

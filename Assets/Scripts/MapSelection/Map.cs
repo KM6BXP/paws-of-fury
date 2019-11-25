@@ -12,4 +12,6 @@ public class Map : ScriptableObject {
     public float zoom = 0.39F;
 
     public Color backgroundColor;
+
+    public SceneReference mapScene;
 }

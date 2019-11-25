@@ -15,6 +15,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/characterSelect.unity
     guid: 0bb44aed428cec14187d5d9bf6a33160
   - enabled: 1
+    path: Assets/Scenes/Menus/mapSelect.unity
+    guid: 0cc3a387a99e7e34592313fc351fc63d
+  - enabled: 1
     path: Assets/Scenes/Fight_Maps/test01/test01.unity
     guid: 9d4189d0964532b42a38ee1e7f73b3fd
+  - enabled: 1
+    path: Assets/Scenes/Fight_Maps/test02/test02.unity
+    guid: 7ab9e42f9f608c54086ca2cc12abd9cd
+  - enabled: 1
+    path: Assets/Scenes/Fight_Maps/test03/test03.unity
+    guid: cdd8dd4c45374494e99dad68e248f88f
   m_configObjects: {}

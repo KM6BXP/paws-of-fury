@@ -9,7 +9,7 @@ public class DeathBarrier : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<Player_movement>().moveVelocity = Vector3.zero;
+            collision.gameObject.GetComponent<Player_Movement>().moveVelocity = Vector3.zero;
             collision.transform.position = spawnpoints[Random.Range(0, spawnpoints.Length)].position;
         }
     }
