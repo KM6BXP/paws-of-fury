@@ -30,11 +30,6 @@ public class Global : MonoBehaviour
     public void Quit()
     {
         Debug.Log("exit");
-
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-         Application.Quit();
-#endif
+        Application.Quit();
     }
 }
