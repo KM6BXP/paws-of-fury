@@ -11,7 +11,7 @@ public class SmashMSS : MonoBehaviour
 
     private GridLayoutGroup gridLayout;
     private RectTransform gridSize;
-    private Load_scene SceneLoad;
+    private Load_Scene SceneLoad;
 
     private float rowSize;
     private float rowCount;
@@ -58,7 +58,7 @@ public class SmashMSS : MonoBehaviour
     //get components and spawn maps
     void Start()
     {
-        SceneLoad = Load_scene.instance;
+        SceneLoad = Load_Scene.instance;
         gridLayout = GetComponent<GridLayoutGroup>();
         gridSize = GetComponent<RectTransform>();
         gridSize.sizeDelta = new Vector2(gridLayout.cellSize.x * 5, gridLayout.cellSize.y * 2);

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Load_scene : MonoBehaviour
+public class Load_Scene : MonoBehaviour
 {
     public SceneReference scene;
-    public static Load_scene instance;
+    public static Load_Scene instance;
     private void Awake()
     {
         instance = this;
